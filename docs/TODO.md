@@ -21,9 +21,9 @@
 |---|---|---|---|---|---|
 | T-001 | P1 | `[x]` | Write `docs/PRD.md` | Student | File exists, all 14 sections complete, accepted criteria listed |
 | T-002 | P1 | `[x]` | Write `docs/PLAN.md` | Student | C4 diagrams, ADRs, schemas, file structure all present |
-| T-003 | P1 | `[~]` | Write `docs/TODO.md` | Student | This file — all phases and tasks listed with DoD |
-| T-004 | P1 | `[ ]` | Write `docs/PRD_signal_generation.md` | Student | Dedicated PRD covers signal math, noise model, I/O, test scenarios |
-| T-005 | P1 | `[ ]` | Write `docs/PRD_ml_models.md` | Student | Dedicated PRD covers FC/RNN/LSTM theory, I/O, hyperparams, test scenarios |
+| T-003 | P1 | `[x]` | Write `docs/TODO.md` | Student | This file — all phases and tasks listed with DoD |
+| T-004 | P1 | `[x]` | Write `docs/PRD_signal_generation.md` | Student | Dedicated PRD covers signal math, noise model, I/O, test scenarios |
+| T-005 | P1 | `[x]` | Write `docs/PRD_ml_models.md` | Student | Dedicated PRD covers FC/RNN/LSTM theory, I/O, hyperparams, test scenarios |
 
 ---
 
@@ -33,17 +33,17 @@
 
 | ID | Priority | Status | Task | Owner | Definition of Done |
 |---|---|---|---|---|---|
-| T-010 | P1 | `[ ]` | Initialize project with `uv init` | Student | `pyproject.toml` and `uv.lock` exist; `uv sync` runs clean |
-| T-011 | P1 | `[ ]` | Add all dependencies via `uv add` | Student | torch, numpy, matplotlib, seaborn, jupyter, pytest, pytest-cov, ruff in `pyproject.toml` |
-| T-012 | P1 | `[ ]` | Create full directory structure | Student | All dirs (src/, tests/, docs/, config/, data/, results/, assets/, notebooks/) exist |
-| T-013 | P1 | `[ ]` | Create `src/signal_extraction/__init__.py` and all sub-package `__init__.py` files | Student | Package importable via `from signal_extraction import ...` |
-| T-014 | P1 | `[ ]` | Write `src/signal_extraction/shared/version.py` | Student | `__version__ = "1.00"` defined and importable |
-| T-015 | P1 | `[ ]` | Write `src/signal_extraction/constants.py` | Student | `WINDOW_SIZE=10`, `N_SIGNALS=4`, `SAMPLE_RATE=1000`, `DURATION=10.0` defined |
-| T-016 | P1 | `[ ]` | Write `config/setup.json` | Student | Valid JSON matching schema in PLAN.md; version field = "1.00" |
-| T-017 | P1 | `[ ]` | Write `src/signal_extraction/shared/config.py` | Student | `ConfigManager` loads `setup.json`, validates version, raises on missing keys |
-| T-018 | P2 | `[ ]` | Configure `ruff` in `pyproject.toml` | Student | `uv run ruff check src/` exits with 0 violations |
-| T-019 | P2 | `[ ]` | Configure `pytest` and `pytest-cov` in `pyproject.toml` | Student | `uv run pytest tests/` runs; coverage report generated; fail_under = 85 |
-| T-020 | P2 | `[ ]` | Create `.env-example` and `.gitignore` | Student | `.env-example` has placeholder values; `.gitignore` covers `.env`, `__pycache__`, `*.pem` |
+| T-010 | P1 | `[x]` | Initialize project with `uv init` | Student | `pyproject.toml` and `uv.lock` exist; `uv sync` runs clean |
+| T-011 | P1 | `[x]` | Add all dependencies via `uv add` | Student | torch, numpy, matplotlib, seaborn, jupyter, pytest, pytest-cov, ruff in `pyproject.toml` |
+| T-012 | P1 | `[x]` | Create full directory structure | Student | All dirs (src/, tests/, docs/, config/, data/, results/, assets/, notebooks/) exist |
+| T-013 | P1 | `[x]` | Create `src/signal_extraction/__init__.py` and all sub-package `__init__.py` files | Student | Package importable via `from signal_extraction import ...` |
+| T-014 | P1 | `[x]` | Write `src/signal_extraction/shared/version.py` | Student | `__version__ = "1.00"` defined and importable |
+| T-015 | P1 | `[x]` | Write `src/signal_extraction/constants.py` | Student | `WINDOW_SIZE=10`, `N_SIGNALS=4`, `SAMPLE_RATE=1000`, `DURATION=10.0` defined |
+| T-016 | P1 | `[x]` | Write `config/setup.json` | Student | Valid JSON matching schema in PLAN.md; version field = "1.00" |
+| T-017 | P1 | `[x]` | Write `src/signal_extraction/shared/config.py` | Student | `ConfigManager` loads `setup.json`, validates version, raises on missing keys |
+| T-018 | P2 | `[x]` | Configure `ruff` in `pyproject.toml` | Student | `uv run ruff check src/` exits with 0 violations |
+| T-019 | P2 | `[x]` | Configure `pytest` and `pytest-cov` in `pyproject.toml` | Student | `uv run pytest tests/` runs; coverage report generated; fail_under = 85 |
+| T-020 | P2 | `[x]` | Create `.env-example` and `.gitignore` | Student | `.env-example` has placeholder values; `.gitignore` covers `.env`, `__pycache__`, `*.pem` |
 
 ---
 
@@ -53,7 +53,7 @@
 
 | ID | Priority | Status | Task | Owner | Definition of Done |
 |---|---|---|---|---|---|
-| T-030 | P1 | `[ ]` | Write `shared/schemas.py` — `SignalParams`, `SignalBundle`, `Sample`, `TrainResult`, `EvalResult` dataclasses | Student | All dataclasses importable; fields match PLAN.md schema |
+| T-030 | P1 | `[x]` | Write `shared/schemas.py` — `SignalParams`, `SignalBundle`, `Sample`, `TrainResult`, `EvalResult` dataclasses | Student | All dataclasses importable; fields match PLAN.md schema |
 | T-031 | P1 | `[ ]` | Write `tests/unit/test_signal_generator.py` (TDD — write first) | Student | Tests cover: correct shape (10000,), formula correctness, noise application, bundle structure |
 | T-032 | P1 | `[ ]` | Write `services/signal_generator.py` — `SignalGeneratorService` | Student | All T-031 tests pass; file ≤ 150 lines; `ruff` clean |
 | T-033 | P2 | `[ ]` | Verify 10 output vectors (S1–S4, Sum, noisy x5) | Student | Manual spot-check + assertion in test: shapes = (10000,), sum = S1+S2+S3+S4 |
