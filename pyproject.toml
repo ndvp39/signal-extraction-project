@@ -1,0 +1,46 @@
+[project]
+name = "signal-extraction"
+version = "1.00"
+description = "Neural network signal extraction: FC vs RNN vs LSTM comparative study"
+readme = "README.md"
+authors = [
+    { name = "ndvp39", email = "ndvp39@gmail.com" }
+]
+requires-python = ">=3.9"
+dependencies = [
+    "matplotlib>=3.9.4",
+    "numpy>=2.0.2",
+    "seaborn>=0.13.2",
+    "torch>=2.8.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.11.9,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "jupyter>=1.1.1",
+    "pytest>=8.4.2",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.15.12",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "C4", "SIM"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=src --cov-report=term-missing"
+
+[tool.coverage.run]
+source = ["src"]
+omit = ["src/main.py", "*/tests/*"]
+
+[tool.coverage.report]
+fail_under = 85

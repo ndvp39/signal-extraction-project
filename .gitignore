@@ -1,0 +1,42 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+*.pyd
+*.so
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments (managed by uv — never commit)
+.venv/
+.uv/
+
+# Environment secrets — NEVER commit
+.env
+*.pem
+*.key
+credentials.json
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Project outputs (large binaries — not committed)
+data/
+results/
+assets/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp

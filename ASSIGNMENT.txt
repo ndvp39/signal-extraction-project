@@ -1,0 +1,269 @@
+Homework Project Instructions (Based Only on What Was Said in the Lecture)
+1. General Goal
+
+Build a project where a neural network receives a short segment of a combined signal and must extract one specific sinusoidal component from it.
+
+The combined signal is made from several sinusoids added together, with noise applied.
+
+2. How Signals Are Represented in a Computer
+
+A sinusoid is not stored as a continuous curve.
+
+It is represented as sampled points.
+
+The more sampled points per second, the closer it is to the real continuous signal.
+
+The number of samples per second is called:
+
+Sampling Frequency
+
+3. Sampling Parameters
+
+The lecturer specified:
+
+Sampling rate = 1000 Hz
+Signal duration = 10 seconds
+
+Therefore:
+
+Each signal contains 10000 samples
+4. Base Signal Formula
+
+Each sinusoid is of the form:
+
+Asin(2πft+ϕ)
+
+Where:
+
+A = amplitude
+f = frequency
+ϕ = phase
+5. Noise
+
+A noisy version of the signal must also be created:
+
+(A±noise)sin(2πft+ϕ±noise)
+
+Noise is added to:
+
+amplitude
+phase
+
+The lecturer also mentioned coefficients:
+
+alpha = strength of amplitude noise
+beta = strength of phase noise
+
+Noise distribution can be:
+
+Uniform
+Gaussian
+
+It was said that either one is acceptable.
+
+6. Signals That Must Be Created
+
+Create 4 sinusoids.
+
+For each sinusoid, generate:
+
+one clean version
+one noisy version
+
+Also generate the sum of the 4 signals.
+
+So the final set is:
+
+Clean Signals
+S1
+S2
+S3
+S4
+Sum
+Noisy Signals
+noisy S1
+noisy S2
+noisy S3
+noisy S4
+noisy Sum
+
+Total:
+
+10 vectors
+
+7. What Must Be Extracted
+
+The model receives the noisy combined signal (sum of noisy sinusoids).
+
+It must extract one selected original sinusoid without noise.
+
+8. Signal Selection Using One-Hot Vector
+
+There is a selector vector:
+
+C
+
+Size = 4
+
+It determines which sinusoid should be extracted.
+
+Examples:
+
+[1,0,0,0]
+
+Extract S1
+
+[0,0,1,0]
+
+Extract S3
+
+9. Context Window
+
+The lecturer explicitly said:
+
+Context Window = 10 samples
+
+The model does not receive the whole signal.
+
+It receives only a window of length 10.
+
+10. How the Dataset Is Built
+
+For every training sample:
+
+Step 1
+
+Choose a random selector vector C.
+
+Step 2
+
+Choose a random position inside the noisy summed signal.
+
+Step 3
+
+Take a window of length 10 from the noisy summed signal.
+
+Step 4
+
+Take the exact same window position from the clean sinusoid selected by C.
+
+11. Dataset Sample Structure
+
+The format was described as:
+
+[C][sigma noisy][Sc]
+
+Where:
+
+C = selector vector
+sigma noisy = noisy sum signal window
+Sc = clean target signal window
+12. Model Input / Output
+Input
+[C][sigma noisy]
+Output
+[Sc]
+13. Loss Function
+
+The lecturer described minimizing the squared error between:
+
+predicted output window
+clean target window
+
+Meaning context-window prediction error.
+
+14. Models That Must Be Implemented
+
+The lecturer mentioned comparing:
+
+Fully Connected (FC)
+RNN
+LSTM
+15. What Must Be Tested
+
+You are expected to test:
+
+whether the models can extract different frequencies
+how RNN performs
+how LSTM performs
+effect of noise
+comparison between models
+16. What Was Said About Architectures
+RNN
+cannot work well with large context windows
+gradients cannot propagate far enough
+suitable for short-term memory
+suitable for high frequencies
+LSTM
+suitable for long-term dependencies
+suitable for slower / longer temporal changes
+17. What the Lecturer Wants Most
+
+A comparative analysis.
+
+You need to convince the lecturer:
+
+why one model is better than another
+when it is better
+when it fails
+how architecture affects results
+18. README File
+
+Must be detailed.
+
+Include:
+
+screenshots
+graphs
+training errors
+signal examples
+experiments
+explanations
+conclusions
+19. Hyperparameters
+
+The lecturer intentionally did not define:
+
+number of layers
+number of perceptrons / hidden units
+other hyperparameters
+
+These must be chosen by the students.
+
+20. Anything Not Explicitly Defined
+
+Can be chosen freely.
+
+But every decision must be explained in the README.
+
+Examples:
+
+why this architecture
+why this noise type
+why these parameters
+21. Training Set
+
+The lecturer said:
+
+The training set uses the same four frequencies.
+
+What changes:
+
+sampled window position
+noise
+22. Code Restriction
+
+Each Python file:
+
+Maximum 150 lines
+
+23. Main Purpose of the Assignment
+
+Show understanding of:
+
+signal sampling
+frequencies
+noise
+temporal neural networks
+differences between FC / RNN / LSTM
+comparative experimental analysis

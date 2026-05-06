@@ -1,0 +1,37 @@
+{
+  "version": "1.00",
+  "signals": {
+    "frequencies": [10, 50, 120, 300],
+    "amplitudes": [1.0, 0.8, 1.2, 0.6],
+    "phases": [0.0, 0.5, 1.0, 1.5],
+    "alpha": 0.1,
+    "beta": 0.1,
+    "noise_dist": "gaussian",
+    "sample_rate": 1000,
+    "duration": 10.0,
+    "seed": 42
+  },
+  "dataset": {
+    "n_samples": 50000,
+    "window_size": 10,
+    "n_signals": 4,
+    "split": [0.7, 0.15, 0.15]
+  },
+  "training": {
+    "epochs": 100,
+    "batch_size": 256,
+    "learning_rate": 0.001,
+    "optimizer": "adam",
+    "patience": 10
+  },
+  "models": {
+    "hidden_size": 128,
+    "n_layers": 2,
+    "dropout": 0.0
+  },
+  "paths": {
+    "data_dir": "data/",
+    "results_dir": "results/",
+    "assets_dir": "assets/"
+  }
+}
