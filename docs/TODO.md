@@ -24,6 +24,7 @@
 | T-003 | P1 | `[x]` | Write `docs/TODO.md` | Student | This file — all phases and tasks listed with DoD |
 | T-004 | P1 | `[x]` | Write `docs/PRD_signal_generation.md` | Student | Dedicated PRD covers signal math, noise model, I/O, test scenarios |
 | T-005 | P1 | `[x]` | Write `docs/PRD_ml_models.md` | Student | Dedicated PRD covers FC/RNN/LSTM theory, I/O, hyperparams, test scenarios |
+| T-006 | P2 | `[x]` | Extract ADRs from `PLAN.md` into individual files in `docs/adr/` | Student | 7 ADR files created; PLAN.md updated with link table; Status/Context/Decision/Consequences in each |
 
 ---
 
@@ -91,14 +92,14 @@
 
 | ID | Priority | Status | Task | Owner | Definition of Done |
 |---|---|---|---|---|---|
-| T-060 | P1 | `[ ]` | Write `tests/unit/test_trainer.py` (TDD — write first) | Student | Tests cover: loss decreases over 2+ epochs, checkpoint saved, early stopping triggers |
-| T-061 | P1 | `[ ]` | Write `services/trainer.py` — `TrainerService` | Student | All T-060 tests pass; file ≤ 150 lines; `ruff` clean |
-| T-062 | P1 | `[ ]` | Write `tests/unit/test_evaluator.py` (TDD — write first) | Student | Tests cover: MSE computed correctly, per-frequency breakdown, EvalResult populated |
-| T-063 | P1 | `[ ]` | Write `services/evaluator.py` — `EvaluatorService` | Student | All T-062 tests pass; file ≤ 150 lines; `ruff` clean |
-| T-064 | P1 | `[ ]` | Write `tests/unit/test_sdk.py` (TDD — write first) | Student | Tests cover: SDK public interface, end-to-end minimal run, config loading |
-| T-065 | P1 | `[ ]` | Write `sdk/sdk.py` — `SignalExtractionSDK` | Student | All T-064 tests pass; file ≤ 150 lines; `ruff` clean |
-| T-066 | P1 | `[ ]` | Write `src/main.py` — CLI entry point | Student | Argument parsing only; delegates entirely to SDK; no business logic |
-| T-067 | P2 | `[ ]` | Write `tests/integration/test_full_pipeline.py` | Student | Full pipeline (generate→dataset→train→evaluate) runs end-to-end without error |
+| T-060 | P1 | `[x]` | Write `tests/unit/test_trainer.py` (TDD — write first) | Student | Tests cover: loss decreases over 2+ epochs, checkpoint saved, early stopping triggers |
+| T-061 | P1 | `[x]` | Write `services/trainer.py` — `TrainerService` | Student | All T-060 tests pass; file ≤ 150 lines; `ruff` clean |
+| T-062 | P1 | `[x]` | Write `tests/unit/test_evaluator.py` (TDD — write first) | Student | Tests cover: MSE computed correctly, per-frequency breakdown, EvalResult populated |
+| T-063 | P1 | `[x]` | Write `services/evaluator.py` — `EvaluatorService` | Student | All T-062 tests pass; file ≤ 150 lines; `ruff` clean |
+| T-064 | P1 | `[x]` | Write `tests/unit/test_sdk.py` (TDD — write first) | Student | Tests cover: SDK public interface, end-to-end minimal run, config loading |
+| T-065 | P1 | `[x]` | Write `sdk/sdk.py` — `SignalExtractionSDK` | Student | All T-064 tests pass; file ≤ 150 lines; `ruff` clean |
+| T-066 | P1 | `[x]` | Write `src/main.py` — CLI entry point | Student | Argument parsing only; delegates entirely to SDK; no business logic |
+| T-067 | P2 | `[x]` | Write `tests/integration/test_full_pipeline.py` | Student | Full pipeline (generate→dataset→train→evaluate) runs end-to-end without error |
 
 ---
 

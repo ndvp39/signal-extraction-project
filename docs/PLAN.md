@@ -250,7 +250,15 @@ signal-extraction-project/
 │   ├── PLAN.md
 │   ├── TODO.md
 │   ├── PRD_signal_generation.md
-│   └── PRD_ml_models.md
+│   ├── PRD_ml_models.md
+│   └── adr/                          # Individual ADR files
+│       ├── ADR-001-noise-distribution.md
+│       ├── ADR-002-framework-pytorch.md
+│       ├── ADR-003-model-input-concatenation.md
+│       ├── ADR-004-loss-function-mse.md
+│       ├── ADR-005-sdk-architecture.md
+│       ├── ADR-006-one-hot-selector.md
+│       └── ADR-007-fixed-window-size.md
 ├── config/
 │   └── setup.json
 ├── data/                             # Generated signals saved here
@@ -366,97 +374,17 @@ class BaseModel(nn.Module, ABC):
 
 ## 5. Architectural Decision Records (ADRs)
 
-### ADR-01 — Noise Distribution: Gaussian
+Each ADR is maintained as an individual file in `docs/adr/` for traceability and easier review.
 
-**Status:** Accepted
-
-**Context:** The assignment allows either uniform or Gaussian noise for amplitude and phase perturbation.
-
-**Decision:** Use Gaussian (Normal) distribution: ε ~ N(0, 1).
-
-**Rationale:** Gaussian noise is the standard model for thermal/electronic noise (justified by the Central Limit Theorem). It is more challenging for the network than uniform noise because it has heavier tails, leading to a more realistic and harder test of robustness.
-
-**Trade-offs:** Uniform noise has a bounded range; Gaussian can occasionally produce large outliers. This is acceptable because alpha and beta control the scale, and outliers stress-test the model.
-
-**Alternatives rejected:** Uniform — simpler but less realistic.
-
----
-
-### ADR-02 — Framework: PyTorch
-
-**Status:** Accepted
-
-**Context:** Need a deep learning framework supporting FC, RNN, and LSTM.
-
-**Decision:** Use PyTorch (`torch.nn`).
-
-**Rationale:** PyTorch provides native `nn.RNN` and `nn.LSTM` modules with well-understood APIs. It is the standard in research settings (MSC-level courses) and integrates well with NumPy.
-
-**Alternatives rejected:** TensorFlow/Keras — heavier ecosystem; Jax — too low-level for this scope.
-
----
-
-### ADR-03 — Model Input: Concatenation of C and Window
-
-**Status:** Accepted (mandated by assignment)
-
-**Context:** The assignment defines input as `[C][σ_noisy]` — selector concatenated with noisy window.
-
-**Decision:** Concatenate the 4-element one-hot selector with the 10-element noisy window to form a 14-element input vector fed to all three models identically.
-
-**Rationale:** Consistent input format enables fair comparison between FC, RNN, and LSTM under identical conditions.
-
-**Trade-offs:** The RNN/LSTM receive a single time-step input (window_size=1 in the sequence dimension), which limits their temporal advantage. This is a deliberate constraint from the assignment to isolate the effect of architecture.
-
----
-
-### ADR-04 — Loss Function: MSE
-
-**Status:** Accepted (mandated by assignment)
-
-**Context:** Lecturer specified minimizing squared error between predicted and clean window.
-
-**Decision:** Use `torch.nn.MSELoss()`.
-
-**Rationale:** MSE is the natural loss for regression over continuous signal values. It penalizes large errors quadratically, which is appropriate for signal reconstruction quality.
-
-**Alternatives rejected:** MAE — less sensitive to outliers, not specified. Huber loss — unnecessary complexity.
-
----
-
-### ADR-05 — SDK Architecture as Single Entry Point
-
-**Status:** Accepted (mandated by guidelines)
-
-**Context:** Dr. Segal's guidelines require all business logic to be accessible via an SDK layer; no logic in CLI.
-
-**Decision:** `SignalExtractionSDK` class wraps all services. `main.py` only parses arguments and delegates to the SDK.
-
-**Rationale:** Enables the analysis notebook, CLI, and future GUI/REST interfaces to all use the same code path. Makes unit testing of business logic straightforward.
-
----
-
-### ADR-06 — No Separate Embedding for Selector C
-
-**Status:** Accepted
-
-**Context:** Could learn an embedding vector for each of the 4 sinusoids instead of using a one-hot vector.
-
-**Decision:** Use the one-hot vector directly, as specified by the assignment (`C` of size 4).
-
-**Rationale:** One-hot directly encodes the assignment specification. An embedding layer would add parameters and complexity with no clear benefit for only 4 classes.
-
----
-
-### ADR-07 — Fixed Window Size = 10
-
-**Status:** Accepted (mandated by assignment)
-
-**Context:** Lecturer explicitly stated context window = 10 samples.
-
-**Decision:** Window size is a constant in `constants.py` (`WINDOW_SIZE = 10`), not a configurable parameter.
-
-**Rationale:** Fixing it as a constant (not in config) is appropriate because it is a physical constraint of the problem definition, not a tunable hyperparameter.
+| ADR | Title | Status |
+|---|---|---|
+| [ADR-001](adr/ADR-001-noise-distribution.md) | Noise Distribution: Gaussian | Accepted |
+| [ADR-002](adr/ADR-002-framework-pytorch.md) | Deep Learning Framework: PyTorch | Accepted |
+| [ADR-003](adr/ADR-003-model-input-concatenation.md) | Model Input: Concatenation of C and Noisy Window | Accepted |
+| [ADR-004](adr/ADR-004-loss-function-mse.md) | Loss Function: MSE | Accepted |
+| [ADR-005](adr/ADR-005-sdk-architecture.md) | SDK Architecture as Single Entry Point | Accepted |
+| [ADR-006](adr/ADR-006-one-hot-selector.md) | Selector C as One-Hot Vector (No Embedding) | Accepted |
+| [ADR-007](adr/ADR-007-fixed-window-size.md) | Fixed Context Window Size = 10 | Accepted |
 
 ---
 
