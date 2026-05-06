@@ -77,13 +77,13 @@
 
 | ID | Priority | Status | Task | Owner | Definition of Done |
 |---|---|---|---|---|---|
-| T-050 | P1 | `[ ]` | Write `models/base_model.py` — `BaseModel` ABC | Student | Abstract `forward()` method defined; subclasses must implement it |
-| T-051 | P1 | `[ ]` | Write `tests/unit/test_fc_model.py` (TDD — write first) | Student | Tests cover: output shape (B,10), forward pass no-error, parameter count sanity |
-| T-052 | P1 | `[ ]` | Write `models/fc_model.py` — `FCModel` | Student | All T-051 tests pass; file ≤ 150 lines; `ruff` clean |
-| T-053 | P1 | `[ ]` | Write `tests/unit/test_rnn_model.py` (TDD — write first) | Student | Tests cover: output shape, hidden state handling, configurable layers |
-| T-054 | P1 | `[ ]` | Write `models/rnn_model.py` — `RNNModel` | Student | All T-053 tests pass; file ≤ 150 lines; `ruff` clean |
-| T-055 | P1 | `[ ]` | Write `tests/unit/test_lstm_model.py` (TDD — write first) | Student | Tests cover: output shape, cell/hidden state handling, configurable layers |
-| T-056 | P1 | `[ ]` | Write `models/lstm_model.py` — `LSTMModel` | Student | All T-055 tests pass; file ≤ 150 lines; `ruff` clean |
+| T-050 | P1 | `[x]` | Write `models/base_model.py` — `BaseModel` ABC | Student | Abstract `forward()` method defined; subclasses must implement it |
+| T-051 | P1 | `[x]` | Write `tests/unit/test_fc_model.py` (TDD — write first) | Student | Tests cover: output shape (B,10), forward pass no-error, parameter count sanity |
+| T-052 | P1 | `[x]` | Write `models/fc_model.py` — `FCModel` | Student | All T-051 tests pass; file ≤ 150 lines; `ruff` clean |
+| T-053 | P1 | `[x]` | Write `tests/unit/test_rnn_model.py` (TDD — write first) | Student | Tests cover: output shape, hidden state handling, configurable layers |
+| T-054 | P1 | `[x]` | Write `models/rnn_model.py` — `RNNModel` | Student | All T-053 tests pass; file ≤ 150 lines; `ruff` clean |
+| T-055 | P1 | `[x]` | Write `tests/unit/test_lstm_model.py` (TDD — write first) | Student | Tests cover: output shape, cell/hidden state handling, configurable layers |
+| T-056 | P1 | `[x]` | Write `models/lstm_model.py` — `LSTMModel` | Student | All T-055 tests pass; file ≤ 150 lines; `ruff` clean |
 
 ---
 
