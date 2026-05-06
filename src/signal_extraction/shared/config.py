@@ -6,6 +6,8 @@ amplitudes, hyperparameters, paths) must be read through this module —
 never hard-coded in source files.
 """
 
+from __future__ import annotations
+
 import json
 from pathlib import Path
 from typing import Any

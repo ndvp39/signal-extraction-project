@@ -55,9 +55,9 @@
 |---|---|---|---|---|---|
 | T-030 | P1 | `[x]` | Write `shared/schemas.py` — `SignalParams`, `SignalBundle`, `Sample`, `TrainResult`, `EvalResult` dataclasses | Student | All dataclasses importable; fields match PLAN.md schema |
 | T-031 | P1 | `[x]` | Write `tests/unit/test_signal_generator.py` (TDD — write first) | Student | Tests cover: correct shape (10000,), formula correctness, noise application, bundle structure |
-| T-032 | P1 | `[ ]` | Write `services/signal_generator.py` — `SignalGeneratorService` | Student | All T-031 tests pass; file ≤ 150 lines; `ruff` clean |
-| T-033 | P2 | `[ ]` | Verify 10 output vectors (S1–S4, Sum, noisy x5) | Student | Manual spot-check + assertion in test: shapes = (10000,), sum = S1+S2+S3+S4 |
-| T-034 | P2 | `[ ]` | Test noise parametrization (alpha=0 → no amplitude noise, beta=0 → no phase noise) | Student | Edge-case tests pass |
+| T-032 | P1 | `[x]` | Write `services/signal_generator.py` — `SignalGeneratorService` | Student | All T-031 tests pass; file ≤ 150 lines; `ruff` clean |
+| T-033 | P2 | `[x]` | Verify 10 output vectors (S1–S4, Sum, noisy x5) | Student | Manual spot-check + assertion in test: shapes = (10000,), sum = S1+S2+S3+S4 |
+| T-034 | P2 | `[x]` | Test noise parametrization (alpha=0 → no amplitude noise, beta=0 → no phase noise) | Student | Edge-case tests pass |
 
 ---
 
