@@ -65,11 +65,11 @@
 
 | ID | Priority | Status | Task | Owner | Definition of Done |
 |---|---|---|---|---|---|
-| T-040 | P1 | `[ ]` | Write `tests/unit/test_dataset_builder.py` (TDD — write first) | Student | Tests cover: sample shape (x=(14,), y=(10,)), one-hot validity, window bounds, split ratios |
-| T-041 | P1 | `[ ]` | Write `services/dataset_builder.py` — `DatasetBuilderService` | Student | All T-040 tests pass; file ≤ 150 lines; `ruff` clean |
-| T-042 | P1 | `[ ]` | Write `SignalDataset` (torch `Dataset` subclass) | Student | `__len__` and `__getitem__` work; tensors of correct dtype (float32) |
-| T-043 | P2 | `[ ]` | Verify DataLoader batching | Student | Batch shape = (B, 14) for x, (B, 10) for y |
-| T-044 | P2 | `[ ]` | Test reproducibility with fixed seed | Student | Two runs with same seed produce identical datasets |
+| T-040 | P1 | `[x]` | Write `tests/unit/test_dataset_builder.py` (TDD — write first) | Student | Tests cover: sample shape (x=(14,), y=(10,)), one-hot validity, window bounds, split ratios |
+| T-041 | P1 | `[x]` | Write `services/dataset_builder.py` — `DatasetBuilderService` | Student | All T-040 tests pass; file ≤ 150 lines; `ruff` clean |
+| T-042 | P1 | `[x]` | Write `SignalDataset` (torch `Dataset` subclass) | Student | `__len__` and `__getitem__` work; tensors of correct dtype (float32) |
+| T-043 | P2 | `[x]` | Verify DataLoader batching | Student | Batch shape = (B, 14) for x, (B, 10) for y |
+| T-044 | P2 | `[x]` | Test reproducibility with fixed seed | Student | Two runs with same seed produce identical datasets |
 
 ---
 
