@@ -46,9 +46,6 @@ uv run python src/main.py --model lstm
 ### Run experiments
 
 ```bash
-# Baseline comparison (FC vs RNN vs LSTM, 3 seeds)
-uv run python src/run_experiments.py --exp baseline
-
 # Noise robustness sweep
 uv run python src/run_experiments.py --exp noise_sweep
 
@@ -103,7 +100,7 @@ signal-extraction-project/
 │       ├── sdk/            # SignalExtractionSDK (single entry point)
 │       └── shared/         # ConfigManager, schemas, version
 ├── tests/
-│   ├── unit/               # 119 unit tests
+│   ├── unit/               # 118 unit tests
 │   └── integration/        # Full pipeline tests
 ├── notebooks/
 │   └── analysis.ipynb      # Results analysis with LaTeX equations
@@ -196,13 +193,9 @@ processing. LSTM's gating mechanism partially mitigates this, placing it between
 
 ### Noise Robustness (EXP-02)
 
-![Noise Heatmap Alpha](assets/noise_heatmap_alpha.png)
+![Noise Heatmap](assets/noise_heatmap.png)
 
 *MSE heatmap: model × amplitude noise level (α). Fixed β = 0.1.*
-
-![Noise Heatmap Beta](assets/noise_heatmap_beta.png)
-
-*MSE heatmap: model × phase noise level (β). Fixed α = 0.1.*
 
 ---
 
