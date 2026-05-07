@@ -203,7 +203,7 @@ processing. LSTM's gating mechanism partially mitigates this, placing it between
 
 ![Hidden Size Sensitivity](assets/sensitivity_hidden_size.png)
 
-*MSE vs. hidden_size (16 → 512). n_layers=2, 3 seeds.*
+*MSE vs. hidden_size (64 → 512). n_layers=2, seed=42.*
 
 ![Depth Sensitivity](assets/sensitivity_n_layers.png)
 
