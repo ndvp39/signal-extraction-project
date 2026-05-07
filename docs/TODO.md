@@ -107,14 +107,14 @@
 
 | ID | Priority | Status | Task | Owner | Definition of Done |
 |---|---|---|---|---|---|
-| T-070 | P1 | `[ ]` | Train FC model — baseline experiment | Student | Checkpoint saved to `results/fc/`; train/val loss logged |
-| T-071 | P1 | `[ ]` | Train RNN model | Student | Checkpoint saved to `results/rnn/`; train/val loss logged |
-| T-072 | P1 | `[ ]` | Train LSTM model | Student | Checkpoint saved to `results/lstm/`; train/val loss logged |
-| T-073 | P1 | `[ ]` | Evaluate all three models on test set | Student | MSE overall + MSE per frequency for each model recorded |
-| T-074 | P1 | `[ ]` | Experiment: vary noise level (alpha/beta × 3 values) | Student | Results table with MSE vs. noise level for each model |
-| T-075 | P2 | `[ ]` | Experiment: vary hidden size | Student | Sensitivity curve: hidden_size vs. test MSE |
-| T-076 | P2 | `[ ]` | Experiment: vary number of layers | Student | Sensitivity curve: n_layers vs. test MSE |
-| T-077 | P3 | `[ ]` | Experiment: vary learning rate | Student | LR sweep results documented |
+| T-070 | P1 | `[x]` | Train FC model — baseline experiment | Student | Checkpoint saved to `results/fc/`; train/val loss logged |
+| T-071 | P1 | `[x]` | Train RNN model | Student | Checkpoint saved to `results/rnn/`; train/val loss logged |
+| T-072 | P1 | `[x]` | Train LSTM model | Student | Checkpoint saved to `results/lstm/`; train/val loss logged |
+| T-073 | P1 | `[x]` | Evaluate all three models on test set | Student | MSE overall + MSE per frequency for each model recorded |
+| T-074 | P1 | `[x]` | Experiment: vary noise level (alpha/beta × 3 values) | Student | Results table with MSE vs. noise level for each model |
+| T-075 | P2 | `[x]` | Experiment: vary hidden size | Student | Sensitivity curve: hidden_size vs. test MSE |
+| T-076 | P2 | `[~]` | Experiment: vary number of layers | Student | Sensitivity curve: n_layers vs. test MSE |
+| T-077 | P3 | `[~]` | Experiment: vary learning rate | Student | LR sweep results documented |
 
 ---
 
@@ -122,12 +122,12 @@
 
 | ID | Priority | Status | Task | Owner | Definition of Done |
 |---|---|---|---|---|---|
-| T-080 | P1 | `[ ]` | Plot training curves (loss vs. epoch) for all 3 models | Student | PNG saved to `assets/training_curves.png`; axes labeled |
-| T-081 | P1 | `[ ]` | Plot MSE comparison bar chart (model × frequency) | Student | PNG saved to `assets/mse_comparison.png` |
-| T-082 | P1 | `[ ]` | Plot predicted vs. clean window examples (one per model) | Student | PNG saved to `assets/signal_examples.png` |
-| T-083 | P2 | `[ ]` | Plot noisy sum signal vs. clean sinusoids (signal overview) | Student | PNG saved to `assets/signal_overview.png` |
-| T-084 | P2 | `[ ]` | Plot noise sensitivity heatmap (model × noise level) | Student | Heatmap saved to `assets/noise_heatmap.png` |
-| T-085 | P3 | `[ ]` | Plot hyperparameter sensitivity curves | Student | PNGs saved to `assets/sensitivity_*.png` |
+| T-080 | P1 | `[~]` | Plot training curves (loss vs. epoch) for all 3 models | Student | PNG saved to `assets/training_curves.png`; axes labeled |
+| T-081 | P1 | `[~]` | Plot MSE comparison bar chart (model × frequency) | Student | PNG saved to `assets/mse_comparison.png` |
+| T-082 | P1 | `[~]` | Plot predicted vs. clean window examples (one per model) | Student | PNG saved to `assets/signal_examples.png` |
+| T-083 | P2 | `[~]` | Plot noisy sum signal vs. clean sinusoids (signal overview) | Student | PNG saved to `assets/signal_overview.png` |
+| T-084 | P2 | `[~]` | Plot noise sensitivity heatmap (model × noise level) | Student | Heatmap saved to `assets/noise_heatmap.png` |
+| T-085 | P3 | `[~]` | Plot hyperparameter sensitivity curves | Student | PNGs saved to `assets/sensitivity_*.png` |
 
 ---
 
@@ -135,9 +135,9 @@
 
 | ID | Priority | Status | Task | Owner | Definition of Done |
 |---|---|---|---|---|---|
-| T-090 | P1 | `[ ]` | Write `notebooks/analysis.ipynb` | Student | Loads results, reproduces all plots, comparative discussion with LaTeX equations |
-| T-091 | P1 | `[ ]` | Write `README.md` | Student | Installation, usage, examples, all graphs embedded, conclusions present |
-| T-092 | P2 | `[ ]` | Write Prompts Book section in README | Student | Key prompts used documented with context, output, and lessons learned |
+| T-090 | P1 | `[~]` | Write `notebooks/analysis.ipynb` | Student | Loads results, reproduces all plots, comparative discussion with LaTeX equations |
+| T-091 | P1 | `[x]` | Write `README.md` | Student | Installation, usage, examples, all graphs embedded, conclusions present |
+| T-092 | P2 | `[x]` | Write Prompts Book section in README | Student | Key prompts used documented with context, output, and lessons learned |
 
 ---
 
