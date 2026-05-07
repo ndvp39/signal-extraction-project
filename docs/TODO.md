@@ -145,13 +145,13 @@
 
 | ID | Priority | Status | Task | Owner | Definition of Done |
 |---|---|---|---|---|---|
-| T-100 | P1 | `[ ]` | `uv run ruff check src/` — zero violations | Student | Exit code 0 |
-| T-101 | P1 | `[ ]` | `uv run pytest tests/ --cov=src --cov-fail-under=85` | Student | All tests pass; coverage ≥ 85% |
-| T-102 | P1 | `[ ]` | Verify all Python files ≤ 150 lines of code | Student | Automated check passes (blank/comment lines excluded) |
-| T-103 | P1 | `[ ]` | Verify no hard-coded values in source (config-driven) | Student | Manual review + grep for magic numbers passes |
-| T-104 | P1 | `[ ]` | Verify all mandatory docs exist | Student | PRD.md, PLAN.md, TODO.md, PRD_signal_generation.md, PRD_ml_models.md all present |
-| T-105 | P2 | `[ ]` | Verify `uv.lock` is up to date and committed | Student | `uv lock --check` passes |
-| T-106 | P2 | `[ ]` | Final README review — screenshots, graphs, conclusions | Student | Peer review checklist passed |
+| T-100 | P1 | `[x]` | `uv run ruff check src/` — zero violations | Student | Exit code 0 |
+| T-101 | P1 | `[x]` | `uv run pytest tests/ --cov=src --cov-fail-under=85` | Student | All tests pass; coverage ≥ 85% |
+| T-102 | P1 | `[x]` | Verify all Python files ≤ 150 lines of code | Student | Automated check passes (blank/comment lines excluded) |
+| T-103 | P1 | `[x]` | Verify no hard-coded values in source (config-driven) | Student | Manual review + grep for magic numbers passes |
+| T-104 | P1 | `[x]` | Verify all mandatory docs exist | Student | PRD.md, PLAN.md, TODO.md, PRD_signal_generation.md, PRD_ml_models.md all present |
+| T-105 | P2 | `[x]` | Verify `uv.lock` is up to date and committed | Student | `uv lock --check` passes |
+| T-106 | P2 | `[x]` | Final README review — screenshots, graphs, conclusions | Student | Peer review checklist passed |
 
 ---
 
