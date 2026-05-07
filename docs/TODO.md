@@ -135,7 +135,7 @@
 
 | ID | Priority | Status | Task | Owner | Definition of Done |
 |---|---|---|---|---|---|
-| T-090 | P1 | `[~]` | Write `notebooks/analysis.ipynb` | Student | Loads results, reproduces all plots, comparative discussion with LaTeX equations |
+| T-090 | P1 | `[x]` | Write `notebooks/analysis.ipynb` | Student | Loads results, reproduces all plots, comparative discussion with LaTeX equations |
 | T-091 | P1 | `[x]` | Write `README.md` | Student | Installation, usage, examples, all graphs embedded, conclusions present |
 | T-092 | P2 | `[x]` | Write Prompts Book section in README | Student | Key prompts used documented with context, output, and lessons learned |
 
