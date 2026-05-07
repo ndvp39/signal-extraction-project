@@ -28,9 +28,9 @@ from signal_extraction.visualization.signal_plots import (
 
 _BASE_CONFIG = "config/setup.json"
 
-_HIDDEN_SIZES = [16, 32, 64, 128, 256, 512]
+_HIDDEN_SIZES = [64, 128, 256, 512]
 _N_LAYERS = [1, 2, 3, 4]
-_LR_VALUES = [0.0001, 0.0003, 0.001, 0.003, 0.01]
+_LR_VALUES = [0.0001, 0.001, 0.003, 0.01]
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
@@ -60,7 +60,7 @@ def main(argv: list[str] | None = None) -> None:
 
     print("Generating noise heatmap...")
     plot_noise_heatmap(
-        noise_sweep_dir=f"{r}/noise_sweep",
+        noise_sweep_dir=f"{r}/noise_sweep/alpha",
         out_path=f"{a}/noise_heatmap.png",
     )
 
